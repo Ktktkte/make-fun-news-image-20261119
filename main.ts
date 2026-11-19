@@ -2,14 +2,15 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Entry for news-image-20261119, v2 "Final Edition": "The World in One
-// Day — Thursday 19 November 2026". The front page (entry.png, JPEG
-// bytes under that name per RULES) is composed for this entry and shipped
-// in the repo; this program copies it to the output directory. Same bytes
-// every run: the file is only ever read, never modified or re-encoded.
-// v2 rebuilds the page with the Final Edition treatment: every tile gets
-// its own illustrated scene (hero, GTA, Gulf, Jeffries, Cyclone, EU),
-// a denser seven-brief band, and a FINAL EDITION masthead chip.
+// Entry for news-image-20261119, v3: "The World in One Day — Thursday
+// 19 November 2026". The front page (entry.png, JPEG bytes under that
+// name per RULES) is composed for this entry and shipped in the repo;
+// this program copies it to the output directory. Same bytes every run:
+// the file is only ever read, never modified or re-encoded.
+// v3 keeps v2's story set and all six illustrated tiles, and fixes the
+// one verified factual error in v2's briefs (gold fell 3.2% on 18 Nov to
+// about $3,730 — lowest since Sept 2025 — not 5%), with the briefs band
+// set one point larger for legibility at small sizes.
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
 const here = dirname(fileURLToPath(import.meta.url));

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Compose v2 ("Final Edition") of the news-image-20261119 front page.
+"""Compose v3 of the news-image-20261119 front page.
+
+v3 keeps v2's story set and all six illustrated tiles, and fixes the one
+verified factual error in v2's briefs (gold: the 18 Nov fall was 3.2% to
+about $3,730, lowest since Sept 2025 — the 5% figure belonged to silver
+that day). Briefs band set one point larger for legibility.
 
 Deterministic: fixed seeds, no timestamps, JPEG q92, no EXIF. Run twice,
 get identical bytes. Writes entry.png next to this script.
@@ -362,15 +367,15 @@ def main():
         "Voyager 1 is one light-day from Earth — NASA discusses it",
         "Anthropic debuts on Nasdaq as ANT, valued past $1.4tn",
         "Van Gogh sells for a record $190.4m after Nazi-history row",
-        "Gold plunges nearly 5% to about $3,730 an ounce",
+        "Gold falls 3.2% to about $3,730 — lowest since Sept 2025",
         "South Florida floods: 15 inches of rain in Broward County",
         "Crimean Bridge attacked again, traffic suspended",
     ]
     for i, b in enumerate(briefs):
         col = 0 if i < 4 else 1
         row = i if i < 4 else i - 4
-        d.text((24 + col * 500, 952 + row * 16), "•  " + b,
-               font=font(SANS, 14), fill=(235, 235, 235))
+        d.text((24 + col * 500, 952 + row * 17), "•  " + b,
+               font=font(SANS, 15), fill=(235, 235, 235))
 
     img = grain(img)
     img.save(HERE / "entry.png", "JPEG", quality=92)
