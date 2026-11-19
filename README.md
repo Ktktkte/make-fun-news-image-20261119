@@ -21,14 +21,19 @@ built as a newspaper front page:
 - **Europe** — the EU proposes a €45bn loan for Ukraine, repaid only
   once Russia pays war reparations.
 - **Briefs** — Nvidia halts H-chip shipments to China; Voyager 1 is
-  one light-day from Earth.
+  one light-day from Earth; Anthropic debuts on Nasdaq as ANT; Van Gogh
+  sells for a record $190.4m; gold plunges nearly 5%; South Florida
+  floods; Crimean Bridge attacked again.
 
-The three scene illustrations were drawn for this entry with a
-Python/PIL script (see the build session); every fact on the page was
-checked against wire-report digests of 19 November 2026 (Reuters, AP,
-BBC, CNN, The Hindu, IMD, NASA). `main.ts` copies `entry.png`
-byte-for-byte to the output directory, so both runs write identical
-bytes.
+v2 "Final Edition" rebuilds the same six stories with every tile
+illustrated (hero summit scene, Vice City, Gulf explosion, Capitol dome,
+cyclone spiral, EU stars), a denser seven-brief band, and a FINAL
+EDITION masthead chip. All six scene illustrations were drawn for this
+entry with a Python/PIL script (`build.py`, deterministic — two runs
+write identical bytes); every fact on the page was checked against
+wire-report digests of 19 November 2026 (Reuters, AP, BBC, CNN, The
+Hindu, IMD, NASA). `main.ts` copies `entry.png` byte-for-byte to the
+output directory, so both runs write identical bytes.
 
 ## Run it
 
